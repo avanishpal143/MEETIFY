@@ -1,6 +1,4 @@
-# DreamNexus - Video Conferencing App 🎥
-
-DreamNexus is a powerful and seamless video conferencing application designed to provide smooth and reliable virtual meetings. It integrates modern web technologies to deliver a real-time communication experience.
+# Video Conferencing App 🎥
 
 ## 🚀 Features
 - High-quality video and audio calls
