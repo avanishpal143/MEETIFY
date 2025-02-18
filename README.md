@@ -1,3 +1,5 @@
+# MEETIFY
+
 # MERN Stack Video Conferencing App
 
 ## Overview
