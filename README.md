@@ -1,71 +1,188 @@
-# Video Conferencing App 🎥
+# MERN Stack Video Conferencing App
 
-## 🚀 Features
-- High-quality video and audio calls
-- Secure authentication and authorization
-- Real-time chat during video conferences
-- Screen sharing functionality
-- Meeting recording support
-- User-friendly interface with a responsive design
+## Overview
+A **MERN Stack Video Conferencing App** that provides:
+- **High-quality video and audio calls**
+- **Secure authentication and authorization**
+- **Real-time chat during video conferences**
+- **Screen sharing functionality**
+- **Meeting recording support**
+- **User-friendly interface with a responsive design**
 
-## 📂 Project Structure
+## Tech Stack
 
-The project is structured into **Frontend**, **Backend**, and **Other Configuration Files**:
+### Frontend:
+- **React.js** - For building the user interface
+- **Redux/Context API** - For state management
+- **Material-UI/Tailwind CSS** - For UI styling
+- **Socket.io-client** - For real-time communication
+- **WebRTC** - For video and audio streaming
 
-### 🖥️ Frontend (React.js)
-Located in the **`frontend/`** folder.
+### Backend:
+- **Node.js** - For server-side execution
+- **Express.js** - For handling API routes
+- **MongoDB (with Mongoose)** - For database management
+- **JWT (JSON Web Token)** - For secure authentication
+- **Socket.io** - For real-time communication
+- **Multer** - For handling file uploads (meeting recording storage)
+- **FFmpeg** - For processing and storing video recordings
 
-#### Key Files:
-- `frontend/src/App.js` - Main React component handling routing
-- `frontend/src/components/VideoRoom.js` - Video conference interface
-- `frontend/src/components/Chat.js` - In-meeting chat feature
-- `frontend/src/components/ScreenShare.js` - Screen sharing functionality
-- `frontend/src/context/AuthContext.js` - User authentication state management
-- `frontend/public/index.html` - Main HTML file for the frontend
-- `frontend/package.json` - Dependencies and scripts
+### DevOps & Deployment:
+- **Docker** - For containerizing the application
+- **Nginx** - For reverse proxy and load balancing
+- **AWS/GCP** - For hosting backend services and video storage
+- **CI/CD (GitHub Actions/Jenkins)** - For automated testing and deployment
 
-### ⚙️ Backend (Node.js & Express.js)
-Located in the **`backend/`** folder.
+---
 
-#### Key Files:
-- `backend/server.js` - Main server file
-- `backend/routes/authRoutes.js` - Authentication routes (login, register)
-- `backend/routes/meetingRoutes.js` - Meeting session management
-- `backend/config/db.js` - Database connection setup
-- `backend/models/User.js` - User schema for MongoDB
-- `backend/models/Meeting.js` - Meeting schema
-- `backend/package.json` - Dependencies and scripts
+## Features
 
-### 🔗 Additional Files
-- `.env` - Environment variables configuration
-- `README.md` - Project documentation (this file)
-- `Dockerfile` - Containerization setup for deployment
-- `.gitignore` - Files to ignore in version control
+### 1. **User Authentication**
+- Secure sign-up, login, and logout
+- OAuth (Google, Facebook) authentication support
 
-## 🛠️ Installation & Setup
+### 2. **Video Conferencing**
+- High-quality video and audio
+- Support for multiple participants
+- Room-based meetings
+- Screen sharing
 
-### 1️⃣ Clone the Repository
-git clone https://github.com/jayesh09871/DreamNexus.git
-cd DreamNexus
+### 3. **Real-time Chat**
+- Text messaging in meetings
+- Emojis, file sharing, and message reactions
 
-## Frontend
-cd frontend
-npm install
+### 4. **Meeting Recording**
+- Record meetings and save them for future use
+- Store recordings securely in cloud storage
 
+### 5. **Responsive UI**
+- Works seamlessly on desktop, tablet, and mobile
 
-## Backend
-cd ../backend
-npm install
+---
 
-## Setup Environment Variable
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
+## Folder Structure
 
-## Run the Application
+```
+📦 mern-video-conferencing-app
+├── 📂 backend
+│   ├── 📂 config          # Configuration files (DB, auth, etc.)
+│   ├── 📂 controllers     # Controllers for business logic
+│   ├── 📂 middleware      # Middleware (auth, error handling, etc.)
+│   ├── 📂 models          # Mongoose models (User, Meetings, etc.)
+│   ├── 📂 routes          # API routes
+│   ├── 📂 services        # WebRTC, recording, and real-time logic
+│   ├── 📂 utils           # Utility functions
+│   ├── server.js         # Express.js entry point
+│   ├── package.json      # Backend dependencies
+│   └── .env              # Environment variables
+│
+├── 📂 frontend
+│   ├── 📂 public          # Static assets
+│   ├── 📂 src
+│   │   ├── 📂 components  # Reusable UI components
+│   │   ├── 📂 pages       # React pages (Home, Dashboard, Meeting Room)
+│   │   ├── 📂 store       # Redux store (if used)
+│   │   ├── 📂 hooks       # Custom React hooks
+│   │   ├── 📂 services    # API calls
+│   │   ├── 📂 utils       # Helper functions
+│   │   ├── App.js        # Main React component
+│   │   ├── index.js      # React entry point
+│   │   ├── styles.css    # Global styles
+│   ├── package.json      # Frontend dependencies
+│   └── .env              # Environment variables
+│
+├── 📂 tests               # End-to-end & unit testing
+├── docker-compose.yml     # Docker configuration
+├── README.md              # Project documentation
+└── .gitignore             # Ignored files
+```
+
+---
+
+## Installation & Setup
+
+### 1. **Clone the Repository**
+```sh
+git clone https://github.com/your-username/mern-video-conferencing-app.git
+cd mern-video-conferencing-app
+```
+
+### 2. **Set Up Backend**
+```sh
 cd backend
+npm install
+```
+- Create a `.env` file with:
+```env
+MONGO_URI=<Your MongoDB URI>
+JWT_SECRET=<Your JWT Secret>
+SOCKET_PORT=<Port for Socket.io>
+```
+- Start the backend:
+```sh
 npm start
+```
 
-## Start the frontend
+### 3. **Set Up Frontend**
+```sh
 cd frontend
+npm install
 npm start
+```
+
+---
+
+## Testing
+
+### **Unit Testing**
+- **Backend:** Jest, Supertest
+- **Frontend:** Jest, React Testing Library
+
+Run backend tests:
+```sh
+cd backend
+npm test
+```
+
+Run frontend tests:
+```sh
+cd frontend
+npm test
+```
+
+### **End-to-End Testing**
+- **Tool:** Cypress, Puppeteer
+
+Start the application and run:
+```sh
+npm run test:e2e
+```
+
+---
+
+## Deployment
+
+### **Docker Deployment**
+1. Build and run the container:
+```sh
+docker-compose up --build
+```
+
+### **Cloud Deployment (AWS/GCP)**
+- **Backend:** Deploy using AWS EC2 / GCP Compute Engine
+- **Frontend:** Deploy using Netlify / Vercel
+- **Database:** Use MongoDB Atlas
+
+---
+
+## Contributing
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature-branch`)
+3. Commit changes (`git commit -m "Added feature"`)
+4. Push to the branch (`git push origin feature-branch`)
+5. Open a Pull Request
+
+---
+
+## License
+MIT License
